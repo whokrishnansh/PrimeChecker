@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Prime Number Checker</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+</head>
+<body>
+<div class="container">
+    <h1>Prime Number Checker</h1>
+    <form action="/check" method="post">
+        <label for="number">Enter a number:</label>
+        <input type="number" id="number" name="number" required>
+        <button type="submit">Check</button>
+    </form>
+    <div th:if="${number != null}">
+        <p th:text="'The number ' + ${number} + ' is ' + (${isPrime} ? 'a prime' : 'not a prime') + ' number.'"></p>
+    </div>
+</div>
+</body>
+</html>
